@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Qualification Page</title>
+<link rel="stylesheet" href="static/style1.css">
+</head>
+<body>
+<img  class="li" src="static/148353-abstract-glowing-light-blue-wave-background-illustrator.jpg">
+<div class="fo">Studies</div>
+<div >
+    <div><button  class="action-button c" data-button-id="1">10th</button></div>
+    <div><button class="action-button a" data-button-id="2">12th</button></div>
+    <div><button class="action-button l" data-button-id="3">Graduation</button></div>
+</div>
+<!-- Display area for actions -->
+<div id="actionDisplay1"></div>
+<img class="mg" src="{{url_for('static', filename='shutterstock_1112381495.jpg')}}">
+   <script>
+       // Get references to the buttons and display area
+        var actionButtons = document.querySelectorAll('.action-button');
+                var actionDisplay1 = document.getElementById('actionDisplay1');
+        // Add click event listeners to all buttons
+        actionButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                handleButtonClick(button.getAttribute('data-button-id'));
+            });
+        });
+
+        // Function to handle button click
+        function handleButtonClick(buttonNumber) {
+            // Clear the content of the display area
+            actionDisplay1.innerHTML = '';
+
+            // Switch between different actions based on the button clicked
+            switch (buttonNumber) {
+                case '1':
+                    actionDisplay1.innerHTML = 'School:"O.C.P.M" CGPA:"9.0" ';
+                           break;
+                case '2':
+                    actionDisplay1.innerHTML = 'School:"C.E.O.A" CGPA:"8.5" ';
+                    break;
+                case '3':
+                    actionDisplay1.innerHTML= 'College:"S.I.T"  CGPA:"8.35" ';
+
+            }
+        }
+</script>
+    </body>
+</html>
